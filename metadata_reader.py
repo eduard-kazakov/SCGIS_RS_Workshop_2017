@@ -17,18 +17,26 @@ class LandsatMetadata:
                       'red_channel_path':'FILE_NAME_BAND_4',
                       'nir_channel_path':'FILE_NAME_BAND_5',
                       'thermal_channel_path':'FILE_NAME_BAND_11',
+                      'pan_channel_path':'FILE_NAME_BAND_8',
                       
                       'red_channel_min_dn':'QUANTIZE_CAL_MIN_BAND_4',
                       'red_channel_max_dn':'QUANTIZE_CAL_MAX_BAND_4',
                       'nir_channel_min_dn':'QUANTIZE_CAL_MIN_BAND_5',
                       'nir_channel_max_dn':'QUANTIZE_CAL_MAX_BAND_5',
+                      'pan_channel_min_dn':'QUANTIZE_CAL_MIN_BAND_8',
+                      'pan_channel_max_dn':'QUANTIZE_CAL_MAX_BAND_8',
+                      
                       'thermal_channel_min_dn':'QUANTIZE_CAL_MIN_BAND_11',
                       'thermal_channel_max_dn':'QUANTIZE_CAL_MAX_BAND_11',
+                      
+                      
                       
                       'red_channel_min_rad':'RADIANCE_MINIMUM_BAND_4',
                       'red_channel_max_rad':'RADIANCE_MAXIMUM_BAND_4',
                       'nir_channel_min_rad':'RADIANCE_MINIMUM_BAND_5',
                       'nir_channel_max_rad':'RADIANCE_MAXIMUM_BAND_5',
+                      'pan_channel_min_rad':'RADIANCE_MINIMUM_BAND_8',
+                      'pan_channel_max_rad':'RADIANCE_MAXIMUM_BAND_8',
                       'thermal_channel_min_rad':'RADIANCE_MINIMUM_BAND_11',
                       'thermal_channel_max_rad':'RADIANCE_MAXIMUM_BAND_11',
                       
@@ -39,6 +47,9 @@ class LandsatMetadata:
                       'red_channel_add':'RADIANCE_ADD_BAND_4',
                       'nir_channel_mult':'RADIANCE_MULT_BAND_5',
                       'nir_channel_add':'RADIANCE_ADD_BAND_5',
+                      'pan_channel_mult':'RADIANCE_MULT_BAND_8',
+                      'pan_channel_add':'RADIANCE_ADD_BAND_8',
+                      
                       'thermal_channel_mult':'RADIANCE_MULT_BAND_11',
                       'thermal_channel_add':'RADIANCE_ADD_BAND_11',
                       
@@ -271,6 +282,7 @@ class LandsatMetadata:
         self.red_channel_path = os.path.dirname(metadata_file) + '/' + self.get_value_by_key(metadata_file,landsat_dict['red_channel_path'])
         self.nir_channel_path = os.path.dirname(metadata_file) + '/' + self.get_value_by_key(metadata_file,landsat_dict['nir_channel_path'])
         self.thermal_channel_path = os.path.dirname(metadata_file) + '/' + self.get_value_by_key(metadata_file,landsat_dict['thermal_channel_path'])
+        self.pan_channel_path = os.path.dirname(metadata_file) + '/' + self.get_value_by_key(metadata_file,landsat_dict['pan_channel_path'])
     
         self.red_channel_min_dn = float(self.get_value_by_key(metadata_file,landsat_dict['red_channel_min_dn']))
         self.red_channel_max_dn = float(self.get_value_by_key(metadata_file,landsat_dict['red_channel_max_dn']))
